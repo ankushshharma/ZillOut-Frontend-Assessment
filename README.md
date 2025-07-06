@@ -1,22 +1,42 @@
-# Twitter/X Clone with Firebase Authentication
+# ZillOut – Twitter/X Clone
 
-A complete Twitter/X home page interface built with React, featuring Firebase authentication for user login/signup functionality.
+A modern, responsive Twitter/X clone built with React, Firebase, and Tailwind CSS. This project was developed as part of an assessment and includes several enhancements for a polished user experience.
+
+---
 
 ## 🚀 Features
 
-### Authentication
-- **Email/Password Authentication** - Traditional signup and login
-- **Google OAuth** - One-click sign-in with Google
-- **Protected Routes** - Automatic redirection for unauthenticated users
-- **User Profile Integration** - Display user info in the interface
+### Assessment Requirements
+- **Landing Page:**  
+  - Clean, responsive layout inspired by Twitter/X.
+  - Sign up and login options (including Google sign-in).
+  - Terms of Service and Privacy Policy pages, accessible from the footer and sign-up agreement.
 
-### Twitter Interface
-- **Responsive Design** - Works on desktop and mobile
-- **Left Sidebar** - Navigation menu with Home, Explore, Notifications, etc.
-- **Main Feed** - Tweet composer and feed with mock data
-- **Right Sidebar** - Search, trending topics, and "Who to follow" suggestions
-- **Interactive Elements** - Like, retweet, comment, share buttons
-- **Real-time Character Counter** - 280 character limit for tweets
+- **Tweet Feed Interface:**  
+  - Displays a list of tweets with user avatars, names, and timestamps.
+  - Tweet composer for posting new tweets.
+  - Interactive buttons for comment, retweet, and like (with live updating counts).
+
+- **User Authentication:**  
+  - Email/password and Google sign-in.
+  - User profile section in the sidebar, sticky at the bottom.
+
+### Additional Features
+- **Animated Loading Skeletons:**  
+  - Modern skeleton loaders for tweet feed while loading data.
+- **Profile Dropdown Menu:**  
+  - Click the user profile in the sidebar to access Profile, Settings, and Logout.
+- **Toast Notifications:**  
+  - Success/error popups for actions like posting a tweet or logging out.
+- **Sidebar Enhancements:**  
+  - Responsive sidebar with active state highlighting.
+  - Custom SVG icons for all menu items.
+  - "Post" button always visible below the menu.
+- **Accessibility & UX:**  
+  - Keyboard navigation, focus states, and ARIA labels.
+  - Responsive design for mobile and desktop.
+
+---
 
 ## 🛠️ Setup Instructions
 
@@ -36,18 +56,7 @@ A complete Twitter/X home page interface built with React, featuring Firebase au
 
 ### 2. Update Firebase Config
 
-Replace the placeholder config in `src/firebase/config.js` with your actual Firebase configuration:
-
-```javascript
-const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project.appspot.com",
-  messagingSenderId: "your-sender-id",
-  appId: "your-app-id"
-};
-```
+Replace the placeholder config in `src/firebase/config.js` with your actual Firebase configuration.
 
 ### 3. Install Dependencies
 
@@ -61,84 +70,55 @@ npm install
 npm run dev
 ```
 
+---
+
 ## 📁 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── Login.jsx           # Login page component
-│   ├── Signup.jsx          # Signup page component
-│   ├── ProtectedRoute.jsx  # Route protection component
-│   ├── TweetCard.jsx       # Individual tweet component
-│   ├── TweetComposer.jsx   # Tweet creation component
-│   ├── SidebarLeft.jsx     # Left navigation sidebar
-│   ├── SidebarRight.jsx    # Right sidebar with trends
-│   └── MainFeed.jsx        # Main feed component
+│   ├── TwitterHome.jsx       # Main Twitter/X home page
+│   ├── Login.jsx             # Login page component
+│   └── Signup.jsx            # Signup page component
 ├── contexts/
-│   └── AuthContext.jsx     # Firebase authentication context
+│   └── AuthContext.jsx       # Firebase authentication context
 ├── firebase/
-│   └── config.js           # Firebase configuration
+│   └── config.js             # Firebase configuration
 ├── utils/
-│   └── mockData.js         # Mock data for tweets and trends
-└── App.jsx                 # Main app component with routing
+│   └── mockData.js           # Mock data for tweets and trends
+└── App.jsx                   # Main app component with routing
 ```
 
-## 🔐 Authentication Flow
+---
 
-1. **Unauthenticated Users** - Redirected to `/login`
-2. **Login Options**:
-   - Email/Password authentication
-   - Google OAuth sign-in
-3. **Signup Options**:
-   - Email/Password registration
-   - Google OAuth sign-up
-4. **Authenticated Users** - Access to main Twitter interface
-5. **Logout** - Available in the user profile section
+## ✅ Assessment Feature Checklist
 
-## 🎨 Design Features
+| Feature                        | Status   |
+|--------------------------------|----------|
+| Responsive landing page        | ✅       |
+| Tweet feed interface           | ✅       |
+| Google sign-in                 | ✅       |
+| Terms of Service page          | ✅       |
+| Privacy Policy page            | ✅       |
+| Sidebar with sticky profile    | ✅       |
+| Interactive tweet actions      | ✅       |
+| Profile dropdown menu          | ✅       |
+| Toast notifications            | ✅       |
+| Loading skeletons              | ✅       |
+| Custom SVG icons               | ✅       |
+| Animated sidebar, Post button  | ✅       |
+| Accessibility improvements     | ✅       |
 
-- **Dark Theme** - Login/signup pages use Twitter's dark theme
-- **Light Theme** - Main interface uses Twitter's light theme
-- **Responsive Layout** - Three-column layout that adapts to screen size
-- **Hover Effects** - Smooth transitions and interactive elements
-- **Modern UI** - Clean, Twitter-like design with proper spacing
+---
 
-## 🔧 Customization
+## ✨ Usage
 
-### Adding Real Backend
-- Replace mock data in `utils/mockData.js` with API calls
-- Update tweet posting functionality to save to database
-- Add real-time updates for likes, retweets, etc.
+- **Sign up** or **log in** (with email or Google).
+- **Post tweets** and interact with the feed.
+- **Navigate** using the sidebar (Home, Explore, Notifications, etc.).
+- **Access** Terms of Service and Privacy Policy from the footer or sign-up agreement.
+- **Open the profile dropdown** for profile/settings/logout.
+- **Enjoy instant feedback** with toast notifications and loading skeletons.
 
-### Styling
-- All styles use Tailwind CSS classes
-- Easy to customize colors, spacing, and layout
-- Component-based architecture for easy modifications
+---
 
-## 🚀 Deployment
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Deploy to your preferred platform:
-   - Vercel
-   - Netlify
-   - Firebase Hosting
-   - GitHub Pages
-
-## 📝 Notes
-
-- This is a frontend-only implementation with mock data
-- Firebase authentication is fully functional
-- Backend integration can be added for real data persistence
-- All components are responsive and follow Twitter's design patterns
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## 📄 License
-
-This project is for educational purposes.

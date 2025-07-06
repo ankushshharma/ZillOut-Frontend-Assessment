@@ -4,11 +4,6 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { mockTweets, trendingTopics, whoToFollow } from './utils/mockData';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import ProtectedRoute from './components/ProtectedRoute';
-import LandingPage from './components/LandingPage';
-import TermsOfService from './components/TermsOfService';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import CookiesPolicy from './components/CookiesPolicy';
 import TwitterHome from './components/TwitterHome';
 import { Toaster } from 'react-hot-toast';
 
@@ -21,9 +16,6 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/tos" element={<TermsOfService />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/cookies" element={<CookiesPolicy />} />
         <Route
           path="/"
           element={<TwitterHome />}
